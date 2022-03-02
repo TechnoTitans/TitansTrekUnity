@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class levelManager : MonoBehaviour {
 
@@ -25,5 +26,17 @@ public class levelManager : MonoBehaviour {
         if (levelButtons[2].interactable == true) {
             endButton.SetActive(true);
         }
+    }
+
+    public void level1() {
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    public void level3() {
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    public void endScene() {
+        SceneManager.LoadScene("endScene");
     }
 }

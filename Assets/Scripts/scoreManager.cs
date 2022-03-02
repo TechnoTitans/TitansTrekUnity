@@ -7,6 +7,8 @@ public class scoreManager : MonoBehaviour
 {
     public Text scoreText;
     private float score;
+    public GameObject gameWonPanel;
+    public GameManager gameManager;
 
     // Update is called once per frame
     void Update()
@@ -18,6 +20,11 @@ public class scoreManager : MonoBehaviour
         {
             score = ((int)score);
         }
-        
+
+        if(score == 20){
+            gameManager.WinLevel();
+            gameWonPanel.SetActive(true);
+        }
+
     }
 }

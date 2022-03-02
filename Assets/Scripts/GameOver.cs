@@ -18,6 +18,15 @@ public class GameOver : MonoBehaviour
 
     public void Restart()
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
     }
+
+    public void HomeButton(){
+        SceneManager.LoadScene("map");
+    }
+
+    public void EndButton(){
+        SceneManager.LoadScene("endScene");
+    }
+
 }
