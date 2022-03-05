@@ -8,7 +8,7 @@ public class scoreManager : MonoBehaviour
     public Text scoreText;
     private float score;
     public GameObject gameWonPanel;
-    public GameManager gameManager;
+    public static bool GameIsPaused = false;
 
     // Update is called once per frame
     void Update()
@@ -21,10 +21,10 @@ public class scoreManager : MonoBehaviour
             score = ((int)score);
         }
 
-        if(score == 20){
-            gameManager.WinLevel();
+        if(score > 25){
             gameWonPanel.SetActive(true);
+            Time.timeScale = 0;
+            GameIsPaused = true;
         }
-
     }
 }

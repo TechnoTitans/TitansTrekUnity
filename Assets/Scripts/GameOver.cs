@@ -1,32 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameOver : MonoBehaviour
 {
-    public GameObject gameOverPanel;
+    public GameObject gameOverMenu;
+    public GameObject HelmetPixel;    
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter2D(Collider2D HelmetPixel)
     {
-        if(GameObject.FindGameObjectWithTag("Player") == null)
+        if (HelmetPixel.CompareTag("Terrain"))
         {
-            gameOverPanel.SetActive(true);
+            gameOverMenu.SetActive(true);
+            Time.timeScale = 0f;
+            Destroy(gameObject);
         }
     }
-
-    public void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
-    }
-
-    public void HomeButton(){
-        SceneManager.LoadScene("map");
-    }
-
-    public void EndButton(){
-        SceneManager.LoadScene("endScene");
-    }
-
 }
